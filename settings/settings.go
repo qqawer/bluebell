@@ -14,6 +14,8 @@ type Config struct {
 		Mode    string `mapstructure:"mode"`
 		Port    int    `mapstructure:"port"`
 		Version string `mapstructure:"version"`
+		StartTime  string `mapstructure:"start_time"`
+		MachineID int64 `mapstructure:"machine_id"`
 	}
 	Log struct {
 		// `mapstructure:"xxxx"`确保正确映射

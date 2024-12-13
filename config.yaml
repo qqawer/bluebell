@@ -3,6 +3,8 @@ app:
   mode: "dev"
   port: 8080
   version: "v0.1.0"
+  strat_time: "2024-12-13"
+  machine_id: 1
 
 log:
   level: "debug"

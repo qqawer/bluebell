@@ -5,6 +5,7 @@ import (
 	"WebApp/dao/redis"
 	"WebApp/global"
 	"WebApp/logger"
+	"WebApp/pkg/snowflake"
 	"WebApp/router"
 	"WebApp/settings"
 	"context"
@@ -46,7 +47,10 @@ func main() {
 		return
 	}
 	// defer global.RedisDB.Close()
-	//
+	
+	if err:=snowflake.Init(settings.AppConfig.App.StartTime,settings.AppConfig.App.MachineID);err!=nil{
+		fmt.Printf("init snowflake failed, err:%v\n",err)
+	}
 	//5.注册路由
 	r:=router.Setup()
 
