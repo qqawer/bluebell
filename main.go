@@ -28,7 +28,7 @@ func main() {
 	}
 
 	//2.初始化日志
-	if err:=logger.Init(settings.AppConfig);err!=nil{
+	if err:=logger.Init(settings.AppConfig,settings.AppConfig.App.Mode);err!=nil{
 		fmt.Printf("init logger failed, err:%v\n",err)
 		return
 	}
@@ -52,7 +52,7 @@ func main() {
 		fmt.Printf("init snowflake failed, err:%v\n",err)
 	}
 	//5.注册路由
-	r:=router.Setup()
+	r:=router.Setup(settings.AppConfig.App.Mode)
 
 	 //6.启动服务(优雅关闭)
 	srv := &http.Server{

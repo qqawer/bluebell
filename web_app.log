@@ -1,1 +1,13 @@
 {"level":"DEBUG","time":"2024-12-11T21:08:06.175+0800","caller":"Project/main.go:35","msg":"logger init success..."}
+{"level":"DEBUG","time":"2024-12-13T22:02:33.814+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-13T22:02:43.820+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-13T22:02:43.821+0800","caller":"Project/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-13T22:12:15.090+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-13T22:12:32.930+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-13T22:12:32.930+0800","caller":"Project/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-13T22:12:39.594+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-13T22:14:45.978+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-13T22:14:45.978+0800","caller":"Project/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-13T22:14:50.989+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-13T22:15:08.657+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-13T22:15:08.657+0800","caller":"Project/main.go:89","msg":"Server exiting"}

@@ -19,7 +19,7 @@ import (
 // var lg *zap.Logger
 
 // InitLogger 初始化Logger
-func Init(cfg *settings.Config) (err error) {
+func Init(cfg *settings.Config,mode string) (err error) {
 	writeSyncer := getLogWriter(cfg.Log.Filename, cfg.Log.MaxSize, cfg.Log.MaxBackups, cfg.Log.MaxAge)
 	encoder := getEncoder()
 	var l = new(zapcore.Level)
@@ -27,7 +27,18 @@ func Init(cfg *settings.Config) (err error) {
 	if err != nil {
 		return err
 	}
-	core := zapcore.NewCore(encoder, writeSyncer, l)
+	var core zapcore.Core
+	if mode=="dev"{
+		//进入开发模式，日志输入到终端
+		consoleEncoder:=zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
+		core=zapcore.NewTee(
+			zapcore.NewCore(encoder,writeSyncer,l),
+			zapcore.NewCore(consoleEncoder,zapcore.Lock(os.Stdout),zapcore.DebugLevel),
+		)
+	}else{
+		core = zapcore.NewCore(encoder, writeSyncer, l)
+	}
+	
 
 	lg := zap.New(core, zap.AddCaller())
 	zap.ReplaceGlobals(lg) // 替换zap包中全局的logger实例，后续在其他包中只需使用zap.L()调用即可
