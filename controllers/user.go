@@ -30,3 +30,19 @@ func SignupHandler(c *gin.Context){
 		"msg":"Success",
 	})
 }
+func LoginHandler(c *gin.Context){
+	//1.验证表单
+	p:=new(models.ParamLogin)
+	if err:=c.ShouldBindJSON(p);err!=nil{
+		zap.L().Error("Login with invalid param",zap.Error(err))
+		c.JSON(http.StatusBadRequest,gin.H{"msg":"请求参数有误"})
+		return
+	}
+	//2.逻辑业务
+	if err:=logic.Login(p);err!=nil{
+		c.JSON(http.StatusOK,gin.H{"msg":err.Error()})
+	}
+	//3.返回数据
+	c.JSON(http.StatusOK,gin.H{"msg":"登陆成功"})
+
+}

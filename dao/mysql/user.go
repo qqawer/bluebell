@@ -1,6 +1,7 @@
 package mysql
 
 import (
+	
 	"WebApp/models"
 	"WebApp/utils"
 	"errors"
@@ -14,7 +15,7 @@ import (
 // CheckUserExist 检查指定用户是否存在
 func CheckUserExist(p *models.ParamSignUp) error {
 	var user models.User
-	err := db.Where("username=?", user.Username).First(&user).Error
+	err := db.Where("username=?", p.Username).First(&user).Error
 	if errors.Is(err, gorm.ErrRecordNotFound){
 		return nil
 	} 
@@ -34,4 +35,17 @@ func InsertUser(input *models.User) (err error) {
 		return err
 	}
 	return nil
+}
+func Login(input *models.User)(err error){
+	var user *models.User
+	//找不到返回返回
+	if err := db.Where("username=?", input.Username).First(&user).Error; err != nil {
+		return err
+	}
+	//验证密码
+	if !utils.CheckPassword(input.Password,user.Password){
+		return errors.New("密码错误")
+	}
+	return nil
+
 }

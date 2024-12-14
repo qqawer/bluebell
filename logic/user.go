@@ -10,21 +10,28 @@ import (
 func SignUp(p *models.ParamSignUp) (err error) {
 	//判断用户在不在
 
-	if err := mysql.CheckUserExist(p);err!=nil{
-	//数据库查询出错
-	return err
+	if err := mysql.CheckUserExist(p); err != nil {
+		//数据库查询出错
+		return err
 	}
-	
+
 	//生成Uid
 	userID := snowflake.GenID()
-	input:=&models.User{
-		UserId: userID, 
-		Username :p.Username,
-		Password :p.Password,
+	input := &models.User{
+		UserId:   userID,
+		Username: p.Username,
+		Password: p.Password,
 	}
-	
 
 	//保存进数据库(密码加密)
 	return mysql.InsertUser(input)
 
+}
+
+func Login(p *models.ParamLogin)(err error) {
+	input := &models.User{
+		Username: p.Username,
+		Password: p.Password,
+	}
+	return mysql.Login(input)
 }

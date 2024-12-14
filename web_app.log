@@ -56,3 +56,15 @@
 {"level":"INFO","time":"2024-12-14T19:53:01.206+0800","caller":"Project/main.go:82","msg":"Server exiting"}
 {"level":"DEBUG","time":"2024-12-14T19:53:08.988+0800","caller":"Project/main.go:36","msg":"logger init success..."}
 {"level":"INFO","time":"2024-12-14T19:53:11.272+0800","caller":"logger/logger.go:77","msg":"/signup","status":200,"method":"GET","path":"/signup","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.2316856}
+{"level":"DEBUG","time":"2024-12-14T21:50:33.084+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-14T21:53:03.958+0800","caller":"logger/logger.go:77","msg":"/login","status":404,"method":"GET","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-14T21:53:31.114+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-14T21:53:31.115+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-14T21:53:36.693+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-14T21:53:41.312+0800","caller":"logger/logger.go:77","msg":"/login","status":404,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-14T21:53:52.622+0800","caller":"logger/logger.go:77","msg":"/api/login","status":404,"method":"POST","path":"/api/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-14T21:53:59.034+0800","caller":"logger/logger.go:77","msg":"/api/login","status":404,"method":"GET","path":"/api/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-14T21:54:54.573+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-14T21:54:54.574+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-14T21:55:01.771+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-14T21:55:05.853+0800","caller":"logger/logger.go:77","msg":"/api/login","status":200,"method":"GET","path":"/api/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.2130254}

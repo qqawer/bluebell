@@ -17,8 +17,12 @@ func Setup(mode string) *gin.Engine {
 
 	// 使用跨域中间件
 	// r.Use(middlewares.CORSMiddleware())
+	auth:=r.Group("/api")
+	{
+		auth.POST("/signup",controllers.SignupHandler)	
+		auth.GET("/login",controllers.LoginHandler)
+	}
 
-	r.GET("/signup",controllers.SignupHandler)
 
 	return r
 }
