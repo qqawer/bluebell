@@ -1,8 +1,9 @@
 package router
 
 import (
+	"WebApp/controllers"
 	"WebApp/logger"
-	"net/http"
+	
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,9 +18,7 @@ func Setup(mode string) *gin.Engine {
 	// 使用跨域中间件
 	// r.Use(middlewares.CORSMiddleware())
 
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, "ok")
-	})
+	r.GET("/signup",controllers.SignupHandler)
 
 	return r
 }

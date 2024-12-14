@@ -1,0 +1,37 @@
+package mysql
+
+import (
+	"WebApp/models"
+	"WebApp/utils"
+	"errors"
+
+	"gorm.io/gorm"
+)
+
+//把每一步数据库封装成函数
+//待logic层根据需求调用
+
+// CheckUserExist 检查指定用户是否存在
+func CheckUserExist(p *models.ParamSignUp) error {
+	var user models.User
+	err := db.Where("username=?", user.Username).First(&user).Error
+	if errors.Is(err, gorm.ErrRecordNotFound){
+		return nil
+	} 
+	return errors.New("用户已存在")
+}
+
+// InsertUser 向数据库中插入一条新的用户记录
+func InsertUser(input *models.User) (err error) {
+	//对密码进行加密
+	input.Password, err = utils.HashPassword(input.Password)
+	if err != nil {
+		return err
+	}
+
+	//执行sql语句入库
+	if err := db.Create(input).Error; err != nil {
+		return err
+	}
+	return nil
+}

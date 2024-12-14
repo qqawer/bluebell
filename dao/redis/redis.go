@@ -1,12 +1,13 @@
 package redis
 
 import (
-	"WebApp/global"
 	"WebApp/settings"
 	"fmt"
 
 	"github.com/go-redis/redis"
 )
+
+var RedisClient *redis.Client
 
 func Init(cfg *settings.Config) (err error) {
 	RedisClient := redis.NewClient(&redis.Options{
@@ -19,7 +20,9 @@ func Init(cfg *settings.Config) (err error) {
 	if err != nil {
 		return err
 	}
-	global.RedisDB = RedisClient
 	return nil
 
+}
+func Close() {
+	_ = RedisClient.Close()
 }
