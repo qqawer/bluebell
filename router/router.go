@@ -3,7 +3,8 @@ package router
 import (
 	"WebApp/controllers"
 	"WebApp/logger"
-	
+	"WebApp/middlewares"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,6 +22,12 @@ func Setup(mode string) *gin.Engine {
 	{
 		auth.POST("/signup",controllers.SignupHandler)	
 		auth.GET("/login",controllers.LoginHandler)
+		auth.GET("/ping",middlewares.JWTAuthMiddleware(),func (c *gin.Context){
+			c.JSON(http.StatusOK,gin.H{
+				"msg":"pong",
+			})
+		})
+		
 	}
 
 

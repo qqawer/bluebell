@@ -20,8 +20,7 @@ mysql:
   password: 123456
   name: sql_demo
   max_open_conns: 200
-  max_idle_conns: 50 
-
+  max_idle_conns: 50
 
 redis:
   host: "127.0.0.1"
@@ -29,3 +28,6 @@ redis:
   db: 0
   password: ""
   pool_size: 100
+
+auth:
+  jwt_expire: 24
