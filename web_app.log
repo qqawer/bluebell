@@ -129,3 +129,11 @@
 {"level":"INFO","time":"2024-12-16T23:22:57.736+0800","caller":"Project/main.go:82","msg":"Server exiting"}
 {"level":"DEBUG","time":"2024-12-16T23:23:04.461+0800","caller":"Project/main.go:36","msg":"logger init success..."}
 {"level":"INFO","time":"2024-12-16T23:23:10.267+0800","caller":"logger/logger.go:77","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.002055}
+{"level":"INFO","time":"2024-12-16T23:47:11.266+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-16T23:47:11.273+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-16T23:47:18.164+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-16T23:47:29.310+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/1","status":200,"method":"GET","path":"/api/v1/community/1","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-16T23:47:42.735+0800","caller":"logger/logger.go:77","msg":"/api/login","status":200,"method":"GET","path":"/api/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-16T23:47:50.913+0800","caller":"logger/logger.go:77","msg":"/api/v1/login","status":200,"method":"GET","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.21994}
+{"level":"INFO","time":"2024-12-16T23:47:59.812+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/1","status":200,"method":"GET","path":"/api/v1/community/1","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0026422}
+{"level":"INFO","time":"2024-12-16T23:48:04.511+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0015803}

@@ -1,5 +1,7 @@
 package models
 
+import "time"
+
 // import "time"
 
 // type Community struct {
@@ -16,8 +18,19 @@ type Community struct {
     Name         string `json:"name" gorm:"column:community_name"`
 }
 
+type CommunityDetail struct {
+    ID           int64  `json:"community_id" gorm:"column:community_id"`
+    Name         string `json:"name" gorm:"column:community_name"`
+    Introduction string    `json:"introduction" gorm:"column:introduction"`
+    CreateTime   time.Time `json:"create_time" gorm:"column:create_time"`
+
+}
+
 func (Community) TableName() string {
 	return "community" // 映射到 user 表
 }
 
+func (CommunityDetail) TableName() string {
+	return "community" // 映射到 user 表
+}
 
