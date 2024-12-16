@@ -10,7 +10,7 @@ import (
 )
 
 func Setup(mode string) *gin.Engine {
-	if mode==gin.ReleaseMode{
+	if mode == gin.ReleaseMode {
 		gin.SetMode(gin.ReleaseMode)
 	}
 	r := gin.New()
@@ -18,18 +18,20 @@ func Setup(mode string) *gin.Engine {
 
 	// 使用跨域中间件
 	// r.Use(middlewares.CORSMiddleware())
-	auth:=r.Group("/api")
+	v1 := r.Group("/api/v1")
+
+	v1.POST("/signup", controllers.SignupHandler)
+	v1.GET("/login", controllers.LoginHandler)
+	v1.Use(middlewares.JWTAuthMiddleware())
 	{
-		auth.POST("/signup",controllers.SignupHandler)	
-		auth.GET("/login",controllers.LoginHandler)
-		auth.GET("/ping",middlewares.JWTAuthMiddleware(),func (c *gin.Context){
-			c.JSON(http.StatusOK,gin.H{
-				"msg":"pong",
-			})
-		})
-		
+		v1.GET("/community", controllers.CommunityHandler)
 	}
 
+	r.NoRoute(func(c *gin.Context){
+		c.JSON(http.StatusOK,gin.H{
+			"msg":"404",
+		})
+	})
 
 	return r
 }

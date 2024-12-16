@@ -111,3 +111,21 @@
 {"level":"INFO","time":"2024-12-15T23:46:53.314+0800","caller":"logger/logger.go:77","msg":"/api/login","status":200,"method":"GET","path":"/api/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.2053935}
 {"level":"INFO","time":"2024-12-15T23:47:01.701+0800","caller":"logger/logger.go:77","msg":"/api/ping","status":200,"method":"GET","path":"/api/ping","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
 {"level":"DEBUG","time":"2024-12-16T16:10:13.720+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-16T19:38:01.927+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-16T19:38:01.930+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-16T23:05:59.755+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-12-16T23:06:50.644+0800","caller":"controllers/community.go:24","msg":"Search with invalid param","error":"invalid character 'u' looking for beginning of value"}
+{"level":"INFO","time":"2024-12-16T23:06:50.645+0800","caller":"logger/logger.go:77","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0005324}
+{"level":"INFO","time":"2024-12-16T23:16:47.811+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-16T23:16:47.811+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-16T23:16:56.749+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-12-16T23:17:03.863+0800","caller":"controllers/community.go:38","msg":"logic.GetCommunityList() failed","error":"Error 1146 (42S02): Table 'sql_demo.communities' doesn't exist"}
+{"level":"INFO","time":"2024-12-16T23:17:03.863+0800","caller":"logger/logger.go:77","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.017615}
+{"level":"INFO","time":"2024-12-16T23:19:36.898+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-16T23:19:36.899+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-16T23:19:42.979+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-16T23:19:45.274+0800","caller":"logger/logger.go:77","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0025253}
+{"level":"INFO","time":"2024-12-16T23:22:57.736+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-16T23:22:57.736+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-16T23:23:04.461+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-16T23:23:10.267+0800","caller":"logger/logger.go:77","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.002055}
