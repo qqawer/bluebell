@@ -35,9 +35,10 @@ func Login(p *models.ParamLogin) (token string,err error) {
 		Password: p.Password,
 	}
 	// 传递的是指针就能拿到user.UserID
-	if err := mysql.Login(input); err != nil {
+	data,err := mysql.Login(input)
+	if err != nil {
 		return "",err
 	}
 	//生成JWT
-	return jwt.GenToken(input.UserId,input.Username)
+	return jwt.GenToken(data.UserId,data.Username)
 }

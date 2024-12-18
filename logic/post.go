@@ -14,3 +14,6 @@ func CreatePost( p *models.Post)(error){
 	//2，入库
 	return mysql.CreatePost(p)
 }
+func GetDetailPost(pid int64)(data *models.Post,err error){
+	return mysql.GetDatailPost(pid)
+}

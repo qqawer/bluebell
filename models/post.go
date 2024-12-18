@@ -1,6 +1,6 @@
 package models
 
-
+import "time"
 
 type Post struct {
 	ID          int64      `json:"id" gorm:"column:post_id"`
@@ -9,7 +9,8 @@ type Post struct {
 	Status      int32      `json:"status" gorm:"column:status"`
 	Title       string     `json:"title" gorm:"column:title" binding:"required"`
 	Content     string     `json:"content" gorm:"column:content" binding:"required"`
-	// CreateTime  *time.Time `json:"create_time" gorm:"column:create_time" gorm:"autoCreateTime"`
+	CreateTime  *time.Time `json:"create_time" gorm:"column:create_time;autoUpdateTime"`
+	UpdateTime  *time.Time `json:"update_time" gorm:"column:update_time;autoUpdateTime"`
 }
 
 func (Post) TableName() string {
