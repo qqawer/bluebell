@@ -53,3 +53,14 @@ func Login(input *models.User)(*models.User,error){
 	return &user,nil
 
 }
+func GetUserById(uid int64)(*models.User,error){
+	var user models.User
+	if err:=db.Where("user_id=?",uid).First(&user).Error;err!=nil{
+		if errors.Is(err,gorm.ErrRecordNotFound){
+			return nil,errors.New("找不到此用户")
+		}else{
+			return nil,err
+		}
+	}
+	return &user, nil
+}

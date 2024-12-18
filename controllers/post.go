@@ -54,7 +54,7 @@ func GetDetailPostHandler(c *gin.Context) {
 	}
 
 	//2.获取数据
-	data,err:=logic.GetDetailPost(pid)
+	data,err:=logic.GetPostById(pid)
 	if err!=nil{
 		zap.L().Error("logic.GetDetailPost(pid) failed",zap.Error(err))
 		appG.Response(http.StatusOK,500,"")

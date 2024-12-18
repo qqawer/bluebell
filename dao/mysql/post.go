@@ -13,7 +13,7 @@ func CreatePost(p *models.Post)(error){
 	}
 	return nil
 }
-func GetDatailPost(pid int64)(*models.Post, error){
+func GetPostById(pid int64)(*models.Post, error){
 	var post models.Post
 	if err:=db.Where("post_id=?",pid).First(&post).Error;err!=nil{
 		if errors.Is(err,gorm.ErrRecordNotFound){
