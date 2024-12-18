@@ -1,9 +1,9 @@
 package models
 
 type User struct {
-	Username string `db:"username"`
-	Password string `db:"password"`
-	UserId   int64  `db:"user_id"`
+	Username string `gorm:"column:username"`
+	Password string `gorm:"column:password"`
+	UserId   int64  `gorm:"column:user_id"`
 }
 
 func (User) TableName() string {

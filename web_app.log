@@ -137,3 +137,75 @@
 {"level":"INFO","time":"2024-12-16T23:47:50.913+0800","caller":"logger/logger.go:77","msg":"/api/v1/login","status":200,"method":"GET","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.21994}
 {"level":"INFO","time":"2024-12-16T23:47:59.812+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/1","status":200,"method":"GET","path":"/api/v1/community/1","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0026422}
 {"level":"INFO","time":"2024-12-16T23:48:04.511+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0015803}
+{"level":"DEBUG","time":"2024-12-17T23:26:38.278+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-17T23:26:52.727+0800","caller":"logger/logger.go:77","msg":"/api/v1/login","status":200,"method":"GET","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.2050655}
+{"level":"INFO","time":"2024-12-17T23:27:30.318+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0037421}
+{"level":"INFO","time":"2024-12-17T23:27:36.123+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/hehe","status":200,"method":"GET","path":"/api/v1/community/hehe","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"INFO","time":"2024-12-17T23:28:19.474+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-17T23:28:19.475+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-17T23:28:25.582+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-17T23:28:37.566+0800","caller":"logger/logger.go:77","msg":"/api/v1/community/hehe","status":200,"method":"GET","path":"/api/v1/community/hehe","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0005255}
+{"level":"INFO","time":"2024-12-17T23:40:35.569+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"DEBUG","time":"2024-12-18T15:39:17.317+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-12-18T16:03:56.585+0800","caller":"controllers/post.go:37","msg":"logic.CreatePost(p) failed","error":"Error 1146 (42S02): Table 'sql_demo.posts' doesn't exist"}
+{"level":"INFO","time":"2024-12-18T16:03:56.585+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0433894}
+{"level":"INFO","time":"2024-12-18T16:04:18.097+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:04:18.097+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:04:25.318+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-12-18T16:04:28.148+0800","caller":"controllers/post.go:36","msg":"logic.CreatePost(p) failed","error":"Error 1146 (42S02): Table 'sql_demo.posts' doesn't exist"}
+{"level":"INFO","time":"2024-12-18T16:04:28.148+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0083001}
+{"level":"INFO","time":"2024-12-18T16:05:15.607+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:05:15.607+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:05:31.128+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-12-18T16:05:33.442+0800","caller":"controllers/post.go:36","msg":"logic.CreatePost(p) failed","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"INFO","time":"2024-12-18T16:05:33.442+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0291097}
+{"level":"INFO","time":"2024-12-18T16:20:23.985+0800","caller":"logger/logger.go:77","msg":"/api/v1/login","status":200,"method":"GET","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.2021258}
+{"level":"ERROR","time":"2024-12-18T16:20:41.604+0800","caller":"controllers/post.go:36","msg":"logic.CreatePost(p) failed","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"INFO","time":"2024-12-18T16:20:41.604+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0018227}
+{"level":"INFO","time":"2024-12-18T16:35:40.819+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:35:40.826+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:35:48.130+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:35:54.692+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0}
+{"level":"ERROR","time":"2024-12-18T16:36:06.243+0800","caller":"controllers/post.go:36","msg":"logic.CreatePost(p) failed","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"INFO","time":"2024-12-18T16:36:06.244+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0045602}
+{"level":"INFO","time":"2024-12-18T16:36:57.297+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:36:57.297+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:37:03.958+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:37:08.787+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0066848}
+{"level":"INFO","time":"2024-12-18T16:38:34.491+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:38:34.491+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:38:40.715+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:38:45.120+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0045603}
+{"level":"INFO","time":"2024-12-18T16:43:07.735+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:43:07.735+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:43:16.416+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:45:31.589+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:45:31.590+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:45:37.450+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-12-18T16:45:46.579+0800","caller":"controllers/post.go:36","msg":"logic.CreatePost(p) failed","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1"}
+{"level":"INFO","time":"2024-12-18T16:45:46.579+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0121451}
+{"level":"INFO","time":"2024-12-18T16:49:12.561+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:49:12.561+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:49:18.844+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:49:50.325+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0032054}
+{"level":"INFO","time":"2024-12-18T16:50:44.369+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:50:44.370+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:50:55.754+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:51:00.397+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.003872}
+{"level":"INFO","time":"2024-12-18T16:51:04.248+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0026327}
+{"level":"INFO","time":"2024-12-18T16:52:05.723+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:52:05.723+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:52:13.364+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T16:52:15.208+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0017967}
+{"level":"INFO","time":"2024-12-18T16:55:04.054+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T16:55:04.055+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T16:55:56.330+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T17:00:14.349+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0025267}
+{"level":"INFO","time":"2024-12-18T17:04:26.175+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T17:04:26.176+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T17:04:36.461+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T17:04:39.992+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0039471}
+{"level":"INFO","time":"2024-12-18T17:05:47.338+0800","caller":"Project/main.go:72","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-12-18T17:05:47.339+0800","caller":"Project/main.go:82","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-12-18T17:05:55.195+0800","caller":"Project/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2024-12-18T17:06:23.333+0800","caller":"logger/logger.go:77","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.0033348}

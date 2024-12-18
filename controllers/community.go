@@ -52,10 +52,10 @@ func CommunityDetailHandler(c *gin.Context) {
 	idStr := c.Param("id")
 	id, err := strconv.ParseInt(idStr, 10, 64)
 	if err!=nil{
-		appG.Response2(http.StatusOK,400,err.Error(),"")
+		appG.Response(http.StatusOK,400,"")
 		return
 	}
-
+	//2.根据id获取社区详情
 	data, err := logic.GetCommunitDetail(id)
 
 	if err != nil {
