@@ -49,14 +49,30 @@ func GetDetailPostHandler(c *gin.Context) {
 	pid, err := strconv.ParseInt(pidStr, 10, 64)
 	if err != nil {
 		zap.L().Error("get post detail with invalid param", zap.Error(err))
-		appG.Response(http.StatusOK,400,"")
+		appG.Response(http.StatusOK, 400, "")
 		return
 	}
 
 	//2.获取数据
-	data,err:=logic.GetPostById(pid)
+	data, err := logic.GetPostById(pid)
+	if err != nil {
+		zap.L().Error("logic.GetDetailPost(pid) failed", zap.Error(err))
+		appG.Response(http.StatusOK, 500, "")
+		return
+	}
+	//3.返回响应
+	appG.Response(http.StatusOK, 200, data)
+}
+func GetPostListHandler(c *gin.Context) {
+	var (
+		appG = app.Gin{C: c}
+	)
+	//1.获取分页数据
+	page,size:=getPageInfo(c)
+	//2.获取List数据
+	data,err:=logic.GetPostList(page,size)
 	if err!=nil{
-		zap.L().Error("logic.GetDetailPost(pid) failed",zap.Error(err))
+		zap.L().Error("logic.GetPostList(page,size) failed",zap.Error(err))
 		appG.Response(http.StatusOK,500,"")
 		return
 	}

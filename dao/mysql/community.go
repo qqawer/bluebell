@@ -36,7 +36,7 @@ func GetCommunityList() ([]models.Community, error) {
 }
 func GetCommunityDetailByID(id int64) (*models.CommunityDetail, error) {
 	var community models.CommunityDetail
-	if err := db.First(&community, id).Error; err != nil {
+	if err := db.Where("community_id=?",id).Find(&community).Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return nil, errors.New("没有查询到community")
 		} else {
