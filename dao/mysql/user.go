@@ -36,21 +36,22 @@ func InsertUser(input *models.User) (err error) {
 	}
 	return nil
 }
-func Login(input *models.User)(*models.User,error){
-	var user models.User
+func Login(input *models.User)(error){
+	// var user models.User
+	oPassword:=input.Password
 	//找不到返回返回
-	if err := db.Where("username=?", input.Username).First(&user).Error; err != nil {
+	if err := db.Where("username=?", input.Username).First(&input).Error; err != nil {
 		if errors.Is(err,gorm.ErrRecordNotFound){
-			return nil,errors.New("用户不存在")
+			return errors.New("用户不存在")
 		}else{
-			return nil,err
+			return err
 		}
 	}
 	//验证密码
-	if !utils.CheckPassword(input.Password,user.Password){
-		return nil,errors.New("密码错误")
+	if !utils.CheckPassword(oPassword,input.Password){
+		return errors.New("密码错误")
 	}
-	return &user,nil
+	return nil
 
 }
 func GetUserById(uid int64)(*models.User,error){

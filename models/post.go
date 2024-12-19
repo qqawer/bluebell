@@ -3,8 +3,8 @@ package models
 import "time"
 
 type Post struct {
-	ID          int64      `json:"id" gorm:"column:post_id"`
-	AuthorID    int64      `json:"author_id" gorm:"column:author_id"`
+	ID          int64      `json:"id,string" gorm:"column:post_id"`
+	AuthorID    int64      `json:"author_id,string" gorm:"column:author_id"`
 	CommunityID int64      `json:"community_id" gorm:"column:community_id" binding:"required"`
 	Status      int32      `json:"status" gorm:"column:status"`
 	Title       string     `json:"title" gorm:"column:title" binding:"required"`

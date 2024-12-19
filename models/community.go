@@ -14,7 +14,7 @@ import "time"
 // }
 
 type Community struct {
-    ID           int64  `json:"id" gorm:"column:community_id"`
+    ID           int64  `json:"id,string" gorm:"column:community_id"`
     Name         string `json:"name" gorm:"column:community_name"`
 }
 
