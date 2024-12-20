@@ -10,8 +10,8 @@ import (
 var RedisClient *redis.Client
 
 func Init(cfg *settings.Config) (err error) {
-	RedisClient := redis.NewClient(&redis.Options{
-		Addr:     cfg.Redis.Host + ":" + fmt.Sprintf("%d", cfg.Redis.Port),
+	RedisClient = redis.NewClient(&redis.Options{
+		Addr:     fmt.Sprintf("%s:%d", cfg.Redis.Host, cfg.Redis.Port),
 		DB:       cfg.Redis.DB,
 		Password: cfg.Redis.Password,
 		PoolSize: cfg.Redis.PoolSize,

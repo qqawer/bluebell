@@ -2,6 +2,7 @@ package logic
 
 import (
 	"WebApp/dao/mysql"
+	"WebApp/dao/redis"
 	"WebApp/models"
 	"WebApp/pkg/snowflake"
 
@@ -14,7 +15,12 @@ func CreatePost(p *models.Post) error {
 	p.ID = postID
 
 	//2，入库
-	return mysql.CreatePost(p)
+	err:=mysql.CreatePost(p)
+	if err!=nil{
+		return err
+	}
+	return redis.CreatePost(p.ID)
+	
 }
 func GetPostById(pid int64) (data *models.ApiPostDetail, err error) {
 	data = new(models.ApiPostDetail)
