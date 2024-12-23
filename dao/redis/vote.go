@@ -67,6 +67,11 @@ func VoteForPost(userID, postID string, value float64) error {
 	//先查询该用户之前的投票纪录
 	ov := RedisClient.ZScore(getRedisKey(KeyPostVotedASetSuffix+postID), userID).Val()
 
+	//如果这一次投票的值和之前保存的值一致，就提示不允许重复投票
+	if value==ov{
+		return errors.New("不允许重复投票")
+	}
+	
 	var op float64
 	if value > ov {
 		op = 1

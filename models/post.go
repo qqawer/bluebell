@@ -18,10 +18,12 @@ func (Post) TableName() string {
 }
 
 type ApiPostDetail struct {
-	AuthorName string
-	*Post      //嵌入帖子结构体
-	*CommunityDetail  `json:"community"`  //嵌入社区信息
+	AuthorName       string
+	VotesNum         int64              `json:"vote_num"`
+	*Post                               //嵌入帖子结构体
+	*CommunityDetail `json:"community"` //嵌入社区信息
 }
+
 func (ApiPostDetail) TableName() string {
 	return "post"
 }
