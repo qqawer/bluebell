@@ -68,14 +68,39 @@ func GetPostListHandler(c *gin.Context) {
 		appG = app.Gin{C: c}
 	)
 	//1.获取分页数据
-	page,size:=getPageInfo(c)
+	page, size := getPageInfo(c)
 	//2.获取List数据
-	data,err:=logic.GetPostList(page,size)
-	if err!=nil{
-		zap.L().Error("logic.GetPostList(page,size) failed",zap.Error(err))
-		appG.Response(http.StatusOK,500,"")
+	data, err := logic.GetPostList(page, size)
+	if err != nil {
+		zap.L().Error("logic.GetPostList(page,size) failed", zap.Error(err))
+		appG.Response(http.StatusOK, 500, "")
 		return
 	}
 	//3.返回响应
+	appG.Response(http.StatusOK, 200, data)
+}
+
+// 按时间、分数排序
+//1.获取参数
+//2.redis获取id列表
+//3.根据id去获取获取list数据库
+func GetPostListHandler2(c *gin.Context) {
+	var (
+		appG = app.Gin{C: c}
+	)
+	//检查param
+	var p *models.ParamPostList
+	if err := c.ShouldBindQuery(&p); err != nil {
+		zap.L().Error("create post with invalid params",zap.Error(err))
+		appG.Response(http.StatusOK,400,"")
+	}
+	
+	data,err:=logic.GetPostList2(p)
+	if err!=nil{
+		zap.L().Error("logic.GetPostList2(p) failed",zap.Error(err))
+		appG.Response(http.StatusOK,500,"")
+	}
+	//
+	//返回响应
 	appG.Response(http.StatusOK,200,data)
 }
