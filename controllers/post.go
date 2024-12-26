@@ -91,11 +91,33 @@ func GetPostListHandler2(c *gin.Context) {
 	//检查param
 	var p *models.ParamPostList
 	if err := c.ShouldBindQuery(&p); err != nil {
-		zap.L().Error("create post with invalid params",zap.Error(err))
+		zap.L().Error("GetPostListHandler2 with invalid params",zap.Error(err))
 		appG.Response(http.StatusOK,400,"")
 	}
 	
 	data,err:=logic.GetPostList2(p)
+	if err!=nil{
+		zap.L().Error("logic.GetPostList2(p) failed",zap.Error(err))
+		appG.Response(http.StatusOK,500,"")
+	}
+	//
+	//返回响应
+	appG.Response(http.StatusOK,200,data)
+}
+
+//根据社区去查询帖子列表
+func GetCommunityPostListHandler(c *gin.Context){
+	var (
+		appG = app.Gin{C: c}
+	)
+	//检查param
+	var p *models.ParamCommunityPostList
+	if err := c.ShouldBindQuery(&p); err != nil {
+		zap.L().Error("GetCommunityPostListHandler with invalid params",zap.Error(err))
+		appG.Response(http.StatusOK,400,"")
+	}
+	
+	data,err:=logic.GetCommunityPostList(p)
 	if err!=nil{
 		zap.L().Error("logic.GetPostList2(p) failed",zap.Error(err))
 		appG.Response(http.StatusOK,500,"")

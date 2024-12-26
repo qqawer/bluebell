@@ -2,9 +2,18 @@ package redis
 
 import (
 	"WebApp/models"
+	"strconv"
+	"time"
 
 	"github.com/go-redis/redis"
 )
+
+func getIDsFormKey(key string, page, size int64) ([]string, error) {
+	start := (page - 1) * size
+	end := start + size - 1
+	//3.ZREVANGE按分数从大到小的顺序查询指定数量的元素
+	return RedisClient.ZRevRange(key, start, end).Result()
+}
 
 func GetPostIDsInOrder(p *models.ParamPostList) ([]string, error) {
 	//从redis获取id
@@ -14,13 +23,10 @@ func GetPostIDsInOrder(p *models.ParamPostList) ([]string, error) {
 		key = getRedisKey(KeyPostScoreZSet)
 	}
 	//2.确定查询的索引起始点
-	start := (p.Page - 1) * p.Size
-	end := start + p.Size - 1
-	//3.ZREVANGE按分数从大到小的顺序查询指定数量的元素
-	return RedisClient.ZRevRange(key, start, end).Result()
-
+	return getIDsFormKey(key, p.Page, p.Size)
 }
 
+// 根据ids查询每篇帖子的投赞成票的数据
 func GetPostVoteData(ids []string) (data []int64, err error) {
 	// data=make([]int64,0,len(ids))
 	// for _,id:=range ids{
@@ -47,4 +53,35 @@ func GetPostVoteData(ids []string) (data []int64, err error) {
 		data = append(data, v)
 	}
 	return
+}
+
+// GetCommunityPostIDsInOrder 按社区查询ids
+func GetCommunityPostIDsInOrder(p *models.ParamCommunityPostList) ([]string, error) {
+	orderKey := getRedisKey(KeyPostTimeZSet)
+	if p.Order == "score" {
+		orderKey = getRedisKey(KeyPostScoreZSet)
+	}
+
+	//使用zinterstore 把分区的帖子set与帖子分数的zset生成一个新的zset
+	//针对新的zset按之前的逻辑取数据
+
+	//社区的key
+	cKey := getRedisKey(KeyCommunitySetSuffix + strconv.Itoa(int(p.CommunityID)))
+	//利用缓存key减少zinterstore执行的次数
+	key := orderKey + strconv.Itoa(int(p.CommunityID))
+	if RedisClient.Exists(key).Val() < 1 {
+		//不存在，需要计算
+		pipeline := RedisClient.Pipeline()
+		RedisClient.ZInterStore(key, redis.ZStore{
+			Aggregate: "MAX",
+		}, cKey, orderKey) //zinterstore 计算
+		pipeline.Expire(key, 60*time.Second) //设置超时时间
+		_, err := pipeline.Exec()
+		if err != nil {
+			return nil, err
+		}
+	}
+	//存在的话就直接key查询ids
+	return getIDsFormKey(key, p.Page, p.Size)
+
 }
