@@ -16,7 +16,7 @@ type ParamVoteData struct {
 	Direction int8   `json:"direction,string" binding:"oneof=1 0 -1"` //赞成票(1)还是反对票(-1)取消投票(0)
 }
 
-
+// ParamPostList 获取帖子列表query string参数
 type ParamPostList struct{
 	Page int64 `form:"page"`
 	Size int64	`form:"size"`
@@ -24,6 +24,6 @@ type ParamPostList struct{
 }
 
 type ParamCommunityPostList struct{
-	ParamPostList
+	*ParamPostList
 	CommunityID int64 `form:"community_id"`
 }
