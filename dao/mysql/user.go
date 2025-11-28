@@ -1,10 +1,10 @@
 package mysql
 
 import (
-	
 	"WebApp/models"
 	"WebApp/utils"
 	"errors"
+	"strings"
 
 	"gorm.io/gorm"
 )
@@ -14,13 +14,25 @@ import (
 
 // CheckUserExist 检查指定用户是否存在
 func CheckUserExist(p *models.ParamSignUp) error {
-	var user models.User
-	err := db.Where("username=?", p.Username).First(&user).Error
-	if errors.Is(err, gorm.ErrRecordNotFound){
-		return nil
-	} 
-	return errors.New("用户已存在")
+    var user models.User
+    err := db.Where("username=?", p.Username).Find(&user).Error // 使用 Find 避免报错
+
+    if err != nil {
+        if strings.Contains(err.Error(), "no such table") || strings.Contains(err.Error(), "doesn't exist") {
+            return errors.New("数据库表不存在")
+        }
+        // 其他数据库错误直接返回
+        return err
+    }
+
+    // 如果用户已存在
+    if user.UserId != 0 { // 通过 UserId 判断是否找到用户
+        return errors.New("用户已存在")
+    }
+
+    return nil // 用户不存在，允许注册
 }
+
 
 // InsertUser 向数据库中插入一条新的用户记录
 func InsertUser(input *models.User) (err error) {

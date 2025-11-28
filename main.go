@@ -96,9 +96,9 @@ func main() {
 	if err := srv.Shutdown(ctx); err != nil {
 		zap.L().Fatal("Server Shutdown", zap.Error(err))
 	}
-	// 关闭数据库和 Redis 连接
-	defer mysql.Close()
-	defer redis.Close()
+		// 关闭数据库和 Redis 连接
+		defer mysql.Close()
+		defer redis.Close()
 	zap.L().Info("Server exiting")
 
 }

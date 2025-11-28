@@ -4,7 +4,7 @@ type User struct {
 	UserId   int64  `gorm:"column:user_id" json:"id,string"`
 	Username string `gorm:"column:username"`
 	Password string `gorm:"column:password" json:"-"`
-	Token string
+	Token    string `gorm:"-"`
 }
 
 func (User) TableName() string {
