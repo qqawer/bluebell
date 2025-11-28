@@ -1,0 +1,33 @@
+app:
+  name: "web_app"
+  mode: "release"
+  port: 8080
+  version: "v0.0.1"
+  start_time: "2024-12-13"
+  machine_id: 1
+
+log:
+  level: "info"
+  filename: "web_app.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+mysql:
+  host: mysql
+  port: 3306
+  user: root
+  password: 123456
+  name: webApp
+  max_open_conns: 200
+  max_idle_conns: 50
+
+redis:
+  host: redis
+  port: 6379
+  password: ""
+  db: 0
+  pool_size: 100
+  
+auth:
+  jwt_expire: 24

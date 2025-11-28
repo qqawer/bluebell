@@ -2,7 +2,8 @@ package mysql
 
 import (
 	"WebApp/settings"
-	
+	"fmt"
+
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -12,14 +13,13 @@ import (
 var db *gorm.DB
 
 func Init(cfg *settings.Config) (err error) {
-	// dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-	// 	cfg.Mysql.User,
-	// 	cfg.Mysql.Password,
-	// 	cfg.Mysql.Host,
-	// 	cfg.Mysql.Port,
-	// 	cfg.Mysql.Name)
-	dsn := "root:123456@tcp(127.0.0.1:3306)/sql_demo?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+		cfg.Mysql.User,
+		cfg.Mysql.Password,
+		cfg.Mysql.Host,
+		cfg.Mysql.Port,
+		cfg.Mysql.Name)
+		db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	// if err != nil {
 	// 	zap.L().Error("Failed to initialize database", zap.Error(err))
 	// }

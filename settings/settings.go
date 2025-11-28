@@ -46,9 +46,10 @@ type Config struct {
 var AppConfig *Config
 
 func Init() (err error) {
-	viper.SetConfigName("config")
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath(".")
+	// viper.SetConfigName("config")
+	// viper.SetConfigType("yaml")
+	// viper.AddConfigPath(".")
+	viper.SetConfigFile("./conf/config.yaml")
 
 	if err := viper.ReadInConfig(); err != nil {
 		// zap.L().Fatal("Error reading config file: %v", zap.Error(err))
