@@ -164,8 +164,3 @@ make gotool
   * **Configuration:** Database passwords are currently in `config.yaml`. Move to environment variables.
   * **Testing:** More comprehensive unit and integration tests can be added.
 
------
-
-## 🤝 Contributors
-
-  * **Bluebell Team**
